@@ -1,19 +1,15 @@
-interface BaseObject {
-  tag: keyof HTMLElementTagNameMap;
+export interface BaseObject {
+  tag?: keyof HTMLElementTagNameMap;
   parent: HTMLElement;
   className?: string;
   text?: string;
 }
 
-export default class BaseComponent {
-  public readonly element: HTMLElement;
-  constructor({
-    tag = "div",
-    parent,
-    className,
-    text,
-  }: BaseObject) {
-    this.element = document.createElement(tag);
+export class BaseComponent<T extends HTMLElement = HTMLElement> {
+  public readonly element: T;
+
+  constructor({ tag = "div", parent, className, text }: BaseObject) {
+    this.element = document.createElement(tag) as T;
     if (className) {
       this.element.className = className;
     }

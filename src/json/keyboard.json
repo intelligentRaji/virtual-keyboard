@@ -1,0 +1,678 @@
+[
+  {
+    "key": "Backquote",
+    "english": {
+      "code": "`",
+      "second": "~"
+    },
+    "russian": {
+      "code": "ё",
+      "second": "Ё"
+    }
+  },
+  {
+    "key": "Digit1",
+    "english": {
+      "code": "1",
+      "second": "!"
+    },
+    "russian": {
+      "code": "1",
+      "second": "!"
+    }
+  },
+  {
+    "key": "Digit2",
+    "english": {
+      "code": "2",
+      "second": "@"
+    },
+    "russian": {
+      "code": "2",
+      "second": "\""
+    }
+  },
+  {
+    "key": "Digit3",
+    "english": {
+      "code": "3",
+      "second": "#"
+    },
+    "russian": {
+      "code": "3",
+      "second": "№"
+    }
+  },
+  {
+    "key": "Digit4",
+    "english": {
+      "code": "4",
+      "second": "$"
+    },
+    "russian": {
+      "code": "4",
+      "second": ";"
+    }
+  },
+  {
+    "key": "Digit5",
+    "english": {
+      "code": "5",
+      "second": "%"
+    },
+    "russian": {
+      "code": "5",
+      "second": "%"
+    }
+  },
+  {
+    "key": "Digit6",
+    "english": {
+      "code": "6",
+      "second": "^"
+    },
+    "russian": {
+      "code": "6",
+      "second": ":"
+    }
+  },
+  {
+    "key": "Digit7",
+    "english": {
+      "code": "7",
+      "second": "&"
+    },
+    "russian": {
+      "code": "7",
+      "second": "?"
+    }
+  },
+  {
+    "key": "Digit8",
+    "english": {
+      "code": "8",
+      "second": "*"
+    },
+    "russian": {
+      "code": "8",
+      "second": "*"
+    }
+  },
+  {
+    "key": "Digit9",
+    "english": {
+      "code": "9",
+      "second": "("
+    },
+    "russian": {
+      "code": "9",
+      "second": "("
+    }
+  },
+  {
+    "key": "Digit0",
+    "english": {
+      "code": "0",
+      "second": ")"
+    },
+    "russian": {
+      "code": "0",
+      "second": ")"
+    }
+  },
+  {
+    "key": "Minus",
+    "english": {
+      "code": "-",
+      "second": "_"
+    },
+    "russian": {
+      "code": "-",
+      "second": "_"
+    }
+  },
+  {
+    "key": "Equal",
+    "english": {
+      "code": "=",
+      "second": "+"
+    },
+    "russian": {
+      "code": "=",
+      "second": "+"
+    }
+  },
+  {
+    "key": "Backspace",
+    "english": {
+      "code": "Backspace"
+    },
+    "russian": {
+      "code": "Backspace"
+    },
+    "special": "true"
+  },
+  {
+    "key": "Tab",
+    "english": {
+      "code": "Tab"
+    },
+    "russian": {
+      "code": "Tab"
+    },
+    "special": "true"
+  },
+  {
+    "key": "KeyQ",
+    "english": {
+      "code": "q",
+      "second": "Q"
+    },
+    "russian": {
+      "code": "й",
+      "second": "Й"
+    }
+  },
+  {
+    "key": "KeyW",
+    "english": {
+      "code": "w",
+      "second": "W"
+    },
+    "russian": {
+      "code": "ц",
+      "second": "Ц"
+    }
+  },
+  {
+    "key": "KeyE",
+    "english": {
+      "code": "e",
+      "second": "E"
+    },
+    "russian": {
+      "code": "у",
+      "second": "У"
+    }
+  },
+  {
+    "key": "KeyR",
+    "english": {
+      "code": "r",
+      "second": "R"
+    },
+    "russian": {
+      "code": "к",
+      "second": "К"
+    }
+  },
+  {
+    "key": "KeyT",
+    "english": {
+      "code": "t",
+      "second": "T"
+    },
+    "russian": {
+      "code": "е",
+      "second": "Е"
+    }
+  },
+  {
+    "key": "KeyY",
+    "english": {
+      "code": "y",
+      "second": "Y"
+    },
+    "russian": {
+      "code": "н",
+      "second": "Н"
+    }
+  },
+  {
+    "key": "KeyU",
+    "english": {
+      "code": "u",
+      "second": "U"
+    },
+    "russian": {
+      "code": "г",
+      "second": "Г"
+    }
+  },
+  {
+    "key": "KeyI",
+    "english": {
+      "code": "i",
+      "second": "I"
+    },
+    "russian": {
+      "code": "ш",
+      "second": "Ш"
+    }
+  },
+  {
+    "key": "KeyO",
+    "english": {
+      "code": "o",
+      "second": "O"
+    },
+    "russian": {
+      "code": "щ",
+      "second": "Щ"
+    }
+  },
+  {
+    "key": "KeyP",
+    "english": {
+      "code": "p",
+      "second": "P"
+    },
+    "russian": {
+      "code": "з",
+      "second": "З"
+    }
+  },
+  {
+    "key": "BracketLeft",
+    "english": {
+      "code": "[",
+      "second": "{"
+    },
+    "russian": {
+      "code": "х",
+      "second": "Х"
+    }
+  },
+  {
+    "key": "BracketRight",
+    "english": {
+      "code": "]",
+      "second": "}"
+    },
+    "russian": {
+      "code": "ъ",
+      "second": "Ъ"
+    }
+  },
+  {
+    "key": "Backslash",
+    "english": {
+      "code": "\\",
+      "second": "|"
+    },
+    "russian": {
+      "code": "\\",
+      "second": "|"
+    }
+  },
+  {
+    "key": "Delete",
+    "english": {
+      "code": "Del"
+    },
+    "russian": {
+      "code": "Del"
+    },
+    "special": "true"
+  },
+  {
+    "key": "CapsLock",
+    "english": {
+      "code": "CapsLock"
+    },
+    "russian": {
+      "code": "CapsLock"
+    },
+    "special": "true"
+  },
+  {
+    "key": "KeyA",
+    "english": {
+      "code": "a",
+      "second": "A"
+    },
+    "russian": {
+      "code": "ф",
+      "second": "Ф"
+    }
+  },
+  {
+    "key": "KeyS",
+    "english": {
+      "code": "s",
+      "second": "S"
+    },
+    "russian": {
+      "code": "ы",
+      "second": "Ы"
+    }
+  },
+  {
+    "key": "KeyD",
+    "english": {
+      "code": "d",
+      "second": "D"
+    },
+    "russian": {
+      "code": "в",
+      "second": "В"
+    }
+  },
+  {
+    "key": "KeyF",
+    "english": {
+      "code": "f",
+      "second": "F"
+    },
+    "russian": {
+      "code": "а",
+      "second": "А"
+    }
+  },
+  {
+    "key": "KeyG",
+    "english": {
+      "code": "g",
+      "second": "G"
+    },
+    "russian": {
+      "code": "п",
+      "second": "П"
+    }
+  },
+  {
+    "key": "KeyH",
+    "english": {
+      "code": "h",
+      "second": "H"
+    },
+    "russian": {
+      "code": "р",
+      "second": "Р"
+    }
+  },
+  {
+    "key": "KeyJ",
+    "english": {
+      "code": "j",
+      "second": "J"
+    },
+    "russian": {
+      "code": "о",
+      "second": "О"
+    }
+  },
+  {
+    "key": "KeyK",
+    "english": {
+      "code": "k",
+      "second": "K"
+    },
+    "russian": {
+      "code": "л",
+      "second": "Л"
+    }
+  },
+  {
+    "key": "KeyL",
+    "english": {
+      "code": "l",
+      "second": "L"
+    },
+    "russian": {
+      "code": "д",
+      "second": "Д"
+    }
+  },
+  {
+    "key": "Semicolon",
+    "english": {
+      "code": ";",
+      "second": ":"
+    },
+    "russian": {
+      "code": "ж",
+      "second": "Ж"
+    }
+  },
+  {
+    "key": "Quote",
+    "english": {
+      "code": "'",
+      "second": "\""
+    },
+    "russian": {
+      "code": "э",
+      "second": "Э"
+    }
+  },
+  {
+    "key": "Enter",
+    "english": {
+      "code": "Enter"
+    },
+    "russian": {
+      "code": "Enter"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ShiftLeft",
+    "english": {
+      "code": "Shift"
+    },
+    "russian": {
+      "code": "Shift"
+    },
+    "special": "true"
+  },
+  {
+    "key": "KeyZ",
+    "english": {
+      "code": "z",
+      "second": "Z"
+    },
+    "russian": {
+      "code": "я",
+      "second": "Я"
+    }
+  },
+  {
+    "key": "KeyX",
+    "english": {
+      "code": "x",
+      "second": "X"
+    },
+    "russian": {
+      "code": "ч",
+      "second": "Ч"
+    }
+  },
+  {
+    "key": "KeyC",
+    "english": {
+      "code": "c",
+      "second": "C"
+    },
+    "russian": {
+      "code": "с",
+      "second": "С"
+    }
+  },
+  {
+    "key": "KeyV",
+    "english": {
+      "code": "v",
+      "second": "V"
+    },
+    "russian": {
+      "code": "м",
+      "second": "М"
+    }
+  },
+  {
+    "key": "KeyB",
+    "english": {
+      "code": "b",
+      "second": "B"
+    },
+    "russian": {
+      "code": "и",
+      "second": "И"
+    }
+  },
+  {
+    "key": "KeyN",
+    "english": {
+      "code": "n",
+      "second": "N"
+    },
+    "russian": {
+      "code": "т",
+      "second": "Т"
+    }
+  },
+  {
+    "key": "KeyM",
+    "english": {
+      "code": "m",
+      "second": "M"
+    },
+    "russian": {
+      "code": "ь",
+      "second": "Ь"
+    }
+  },
+  {
+    "key": "Comma",
+    "english": {
+      "code": ",",
+      "second": "<"
+    },
+    "russian": {
+      "code": "б",
+      "second": "Б"
+    }
+  },
+  {
+    "key": "Period",
+    "english": {
+      "code": ".",
+      "second": ">"
+    },
+    "russian": {
+      "code": "ю",
+      "second": "Ю"
+    }
+  },
+  {
+    "key": "Slash",
+    "english": {
+      "code": "/",
+      "second": "?"
+    },
+    "russian": {
+      "code": ".",
+      "second": ","
+    }
+  },
+  {
+    "key": "ArrowUp",
+    "russian": {
+      "code": "▲"
+    },
+    "english": {
+      "code": "▲"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ShiftRight",
+    "russian": {
+      "code": "Shift"
+    },
+    "english": {
+      "code": "Shift"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ControlLeft",
+    "russian": {
+      "code": "Ctrl"
+    },
+    "english": {
+      "code": "Ctrl"
+    },
+    "special": "true"
+  },
+  {
+    "key": "AltLeft",
+    "russian": {
+      "code": "Alt"
+    },
+    "english": {
+      "code": "Alt"
+    },
+    "special": "true"
+  },
+  {
+    "key": "Space",
+    "russian": {
+      "code": " "
+    },
+    "english": {
+      "code": " "
+    }
+  },
+  {
+    "key": "AltRight",
+    "russian": {
+      "code": "Alt gr"
+    },
+    "english": {
+      "code": "Alt gr"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ArrowLeft",
+    "russian": {
+      "code": "◀"
+    },
+    "english": {
+      "code": "◀"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ArrowDown",
+    "russian": {
+      "code": "▼"
+    },
+    "english": {
+      "code": "▼"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ArrowRight",
+    "russian": {
+      "code": "▶"
+    },
+    "english": {
+      "code": "▶"
+    },
+    "special": "true"
+  },
+  {
+    "key": "ControlRight",
+    "russian": {
+      "code": "Ctrl"
+    },
+    "english": {
+      "code": "Ctrl"
+    },
+    "special": "true"
+  }
+]

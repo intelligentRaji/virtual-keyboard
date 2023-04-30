@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/intelligentRaji/webpack-config#readme",
   "dependencies": {
-    "normalize.css": "^8.0.1",
     "ps-node": "^0.1.6"
   },
   "devDependencies": {

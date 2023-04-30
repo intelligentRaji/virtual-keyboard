@@ -1,0 +1,55 @@
+.main {
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.textarea {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background-color: #424242;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.key {
+  height: 70px;
+  width: 70px;
+  font-size: 20px;
+  transition: all 0.2s ease 0s;
+  background-color: #727272;
+  color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+}
+
+.key.active {
+  background-color: #96f18a;
+  border-radius: 40px;
+}
+
+.special {
+  background-color: #333333;
+  color: #c4c4c4;
+}
+
+.controled {
+  background-color: #333333;
+  color: #c4c4c4;
+}
