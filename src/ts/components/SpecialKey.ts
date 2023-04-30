@@ -141,11 +141,11 @@ export class SpecialKey extends Key {
       );
     } else {
       Key.shift = true;
-      console.log(Key.shift);
       Object.values(this.keys).forEach((item: Key | SpecialKey) =>
         item.getSecondValue()
       );
     }
+    this.element.classList.toggle("active");
   }
 
   private altAction(): void {
