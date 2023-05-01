@@ -66,6 +66,14 @@ export class SpecialKey extends Key {
         this.rightAction();
         break;
 
+      case "▲":
+        this.upAction();
+        break;
+
+      case "▼":
+        this.downAction();
+        break;
+
       default:
     }
     this.addActive();
@@ -180,6 +188,28 @@ export class SpecialKey extends Key {
 
   private rightAction(): void {
     const position = this.textarea.selectionStart + 1;
+    this.moveCursorTo(position);
+  }
+
+  private upAction(): void {
+    const position = this.textarea.selectionStart + 1;
+    this.textarea.value = `${this.textarea.value.slice(
+      0,
+      this.textarea.selectionStart
+    )}${this.element.textContent}${this.textarea.value.slice(
+      this.textarea.selectionStart
+    )}`;
+    this.moveCursorTo(position);
+  }
+
+  private downAction(): void {
+    const position = this.textarea.selectionStart + 1;
+    this.textarea.value = `${this.textarea.value.slice(
+      0,
+      this.textarea.selectionStart
+    )}${this.element.textContent}${this.textarea.value.slice(
+      this.textarea.selectionStart
+    )}`;
     this.moveCursorTo(position);
   }
 
