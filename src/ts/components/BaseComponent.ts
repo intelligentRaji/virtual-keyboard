@@ -17,7 +17,7 @@ export class BaseComponent<T extends HTMLElement = HTMLElement> {
       parent.append(this.element);
     }
     if (text) {
-      this.element.textContent = text;
+      this.element.innerHTML = text;
     }
   }
 }

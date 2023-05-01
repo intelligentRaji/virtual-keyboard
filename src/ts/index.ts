@@ -1,4 +1,5 @@
 import "../style/style.scss";
+import { Footer } from "./footer/Footer";
 
 import { Main } from "./main/Main";
 
@@ -7,3 +8,4 @@ if (!localStorage.getItem("language")) {
 }
 
 const main = new Main();
+const footer = new Footer(document.body);
