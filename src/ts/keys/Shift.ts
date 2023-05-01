@@ -2,7 +2,7 @@ import { Key } from "../components/Key";
 import { KeyInterface } from "../interfaces/keyInterface";
 import type { KeysRecord } from "../main/Keyboard";
 
-export class Alt extends Key {
+export class Shift extends Key {
   private readonly keys: KeysRecord;
   private readonly files: KeyInterface;
 

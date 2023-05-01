@@ -2,7 +2,7 @@ import { Key } from "../components/Key";
 import { KeyInterface } from "../interfaces/keyInterface";
 import type { KeysRecord } from "../main/Keyboard";
 
-export class Left extends Key {
+export class Right extends Key {
   private readonly keys: KeysRecord;
   private readonly files: KeyInterface;
 

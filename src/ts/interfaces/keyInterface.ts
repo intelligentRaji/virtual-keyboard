@@ -1,10 +1,10 @@
 export interface KeyInterface {
   key: string;
-  english?: {
+  english: {
     code: string;
     second?: string;
   };
-  russian?: {
+  russian: {
     code: string;
     second?: string;
   };
