@@ -8,7 +8,7 @@ export class Footer extends BaseComponent {
     this.languageInstructions = new BaseComponent<HTMLParagraphElement>({
       tag: "p",
       parent: this.element,
-      text: `Смена языка Shift + Ctrl. <br> Клавиатура сделана на системе Windows`,
+      text: `Смена языка Shift + Alt. <br> Клавиатура сделана на системе Windows`,
       className: "instructions",
     });
   }

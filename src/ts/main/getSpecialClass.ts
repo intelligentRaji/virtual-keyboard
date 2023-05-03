@@ -9,6 +9,8 @@ import { Right } from "../keys/Right";
 import { Shift } from "../keys/Shift";
 import { Tab } from "../keys/Tab";
 import { Key } from "../components/Key";
+import { Up } from "../keys/Up";
+import { Down } from "../keys/Down";
 
 export interface ObjofClassProperties {
   files: KeyInterface;
@@ -28,6 +30,8 @@ export const objOfSpecialClasses: Recordobj = {
   Enter: (obj: ObjofClassProperties): Key => new Enter(obj),
   ArrowLeft: (obj: ObjofClassProperties): Key => new Left(obj),
   ArrowRight: (obj: ObjofClassProperties): Key => new Right(obj),
+  ArrowUp: (obj: ObjofClassProperties): Key => new Up(obj),
+  ArrowDown: (obj: ObjofClassProperties): Key => new Down(obj),
   ShiftRight: (obj: ObjofClassProperties): Key => new Shift(obj),
   ShiftLeft: (obj: ObjofClassProperties): Key => new Shift(obj),
   Tab: (obj: ObjofClassProperties): Key => new Tab(obj),
