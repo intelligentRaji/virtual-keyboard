@@ -1,6 +1,6 @@
-import { KeyArguemnts, Key } from "./Key";
+import { KeyArguemnts, Key } from "../components/Key";
 
-export class SpecialKey extends Key {
+export class Tab extends Key {
   constructor({ files, parent, className, textarea }: KeyArguemnts) {
     super({
       files,
@@ -11,6 +11,6 @@ export class SpecialKey extends Key {
   }
 
   public action(): void {
-    this.addActive();
+    super.action("\t");
   }
 }

@@ -1,25 +1,26 @@
 import { BaseComponent } from "./BaseComponent";
 import { KeyInterface } from "../interfaces/keyInterface";
 
+type TextContetType = string | null;
+
+export interface KeyArguemnts {
+  files: KeyInterface;
+  parent: HTMLElement;
+  className: string;
+  textarea: HTMLTextAreaElement;
+  keys?: Record<string, Key>;
+}
+
 export class Key extends BaseComponent {
   protected readonly textarea: HTMLTextAreaElement;
   protected static capslock = false;
-  protected static language: "english" | "russian";
   protected static shift = false;
-  protected english!: { code: string; second?: string } | null;
-  protected russian!: { code: string; second?: string } | null;
+  protected static alt = false;
+  protected static language: "english" | "russian";
+  protected english!: { code: string; second?: string };
+  protected russian!: { code: string; second?: string };
 
-  constructor({
-    files,
-    parent,
-    className,
-    textarea,
-  }: {
-    files: KeyInterface;
-    parent: HTMLElement;
-    className: string;
-    textarea: HTMLTextAreaElement;
-  }) {
+  constructor({ files, parent, className, textarea }: KeyArguemnts) {
     super({
       tag: "button",
       parent,
@@ -32,30 +33,35 @@ export class Key extends BaseComponent {
     this.getListeners();
   }
 
-  public action(): void {
+  protected getListeners(): void {
+    this.element.addEventListener("mousedown", () => {
+      this.action();
+    });
+    this.element.addEventListener("mouseup", this.removeActive.bind(this));
+    this.element.addEventListener("mouseout", this.removeActive.bind(this));
+  }
+
+  public action(symbol = this.element.textContent): void {
     const position = this.textarea.selectionStart + 1;
-    this.write();
+    this.write(symbol);
     this.moveCursorTo(position);
     this.addActive();
   }
-
-  public touchpadAction(): void {}
 
   protected moveCursorTo(position: number): void {
     this.textarea.setSelectionRange(position, position);
   }
 
-  private write(): void {
+  private write(symbol: TextContetType): void {
     this.textarea.value = `${this.textarea.value.slice(
       0,
       this.textarea.selectionStart
-    )}${this.element.textContent}${this.textarea.value.slice(
-      this.textarea.selectionStart
-    )}`;
+    )}${symbol}${this.textarea.value.slice(this.textarea.selectionStart)}`;
   }
 
   public addActive(): void {
     this.element.classList.add("active");
+    this.textarea.blur();
     this.textarea.focus();
   }
 
@@ -64,37 +70,12 @@ export class Key extends BaseComponent {
     this.textarea.focus();
   }
 
-  private getListeners(): void {
-    this.element.addEventListener("mousedown", () => {
-      if (this.element.textContent !== "Shift") {
-        this.action();
-      }
-    });
-    this.element.addEventListener("mouseup", () => {
-      if (this.element.textContent !== "Shift") {
-        this.removeActive();
-      }
-    });
-    this.element.addEventListener("mouseout", () => {
-      if (this.element.textContent !== "Shift") {
-        this.removeActive();
-      }
-    });
-    if (this.element.textContent === "Shift") {
-      this.element.addEventListener("click", this.touchpadAction.bind(this));
-    }
-  }
-
   protected getValues(files: KeyInterface): void {
     if (files.russian) {
       this.russian = files.russian;
-    } else {
-      this.russian = null;
     }
     if (files.english) {
       this.english = files.english;
-    } else {
-      this.english = null;
     }
   }
 
