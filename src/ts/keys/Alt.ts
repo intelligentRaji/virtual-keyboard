@@ -1,24 +1,14 @@
-import { Key } from "../components/Key";
-import { KeyInterface } from "../interfaces/keyInterface";
+import { KeyArguemnts, Key } from "../components/Key";
 import type { KeysRecord } from "../main/Keyboard";
+
+interface AltConstructor extends KeyArguemnts {
+  keys: KeysRecord;
+}
 
 export class Alt extends Key {
   private readonly keys: KeysRecord;
-  private readonly files: KeyInterface;
 
-  constructor({
-    files,
-    parent,
-    className,
-    textarea,
-    keys,
-  }: {
-    files: KeyInterface;
-    parent: HTMLElement;
-    className: string;
-    textarea: HTMLTextAreaElement;
-    keys: KeysRecord;
-  }) {
+  constructor({ files, parent, className, textarea, keys }: AltConstructor) {
     super({
       files,
       parent,
@@ -26,7 +16,6 @@ export class Alt extends Key {
       textarea,
     });
     this.keys = keys;
-    this.files = files;
   }
 
   public action(): void {
@@ -34,7 +23,13 @@ export class Alt extends Key {
     this.addActive();
   }
 
+  public removeActive(): void {
+    super.removeActive();
+    Key.alt = false;
+  }
+
   private altAction(): void {
+    Key.alt = true;
     if (Key.shift) {
       this.changeLanguage();
       Object.values(this.keys).forEach((item) => {

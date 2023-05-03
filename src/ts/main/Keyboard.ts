@@ -2,8 +2,8 @@ import { BaseComponent } from "../components/BaseComponent";
 import keysJSON from "../../json/keyboard.json";
 import { Key } from "../components/Key";
 import { KeyInterface } from "../interfaces/keyInterface";
+import { objOfSpecialClasses } from "./getSpecialClass";
 import { SpecialKey } from "../components/SpecialKey";
-import { ObjofClassProperties, objOfSpecialClasses } from "./getSpecialClass";
 
 export type KeysRecord = Record<string, Key>;
 
@@ -58,7 +58,16 @@ export class Keyboard extends BaseComponent {
     row: HTMLElement,
     keys: KeysRecord
   ): Key {
-    if (this.classes[json.english.code]) {
+    if (this.classes[json.key]) {
+      return this.classes[json.key]({
+        files: json,
+        parent: row,
+        className: "key special",
+        textarea: this.textarea,
+        keys,
+      });
+    }
+    if (json.special) {
       return new SpecialKey({
         files: json,
         parent: row,

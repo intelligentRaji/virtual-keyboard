@@ -1,24 +1,16 @@
-import { Key } from "../components/Key";
+import { KeyArguemnts, Key } from "../components/Key";
 import { KeyInterface } from "../interfaces/keyInterface";
 import type { KeysRecord } from "../main/Keyboard";
+
+interface ShiftConstructor extends KeyArguemnts {
+  keys: KeysRecord;
+}
 
 export class Shift extends Key {
   private readonly keys: KeysRecord;
   private readonly files: KeyInterface;
 
-  constructor({
-    files,
-    parent,
-    className,
-    textarea,
-    keys,
-  }: {
-    files: KeyInterface;
-    parent: HTMLElement;
-    className: string;
-    textarea: HTMLTextAreaElement;
-    keys: KeysRecord;
-  }) {
+  constructor({ files, parent, className, textarea, keys }: ShiftConstructor) {
     super({
       files,
       parent,
@@ -30,41 +22,60 @@ export class Shift extends Key {
   }
 
   public action(): void {
-    this.shiftAction();
+    if (Key.alt) {
+      this.changeLanguage();
+    }
+    this.shiftAction(true);
     this.addActive();
   }
 
   public removeActive(): void {
     super.removeActive();
-    Key.shift = false;
-    Object.values(this.keys).forEach((item: Key | SpecialKey) =>
-      item.getFirstValue(this.files)
-    );
-  }
-
-  public touchpadAction(): void {
-    this.shiftTouchAction();
-  }
-
-  private shiftAction(): void {
-    Key.shift = true;
-    Object.values(this.keys).forEach((item: Key | SpecialKey) =>
-      item.getSecondValue()
-    );
+    this.shiftAction();
   }
 
   private shiftTouchAction(): void {
+    console.log(1);
     if (Key.shift) {
-      Key.shift = false;
-      Object.values(this.keys).forEach((item: Key | SpecialKey) =>
-        item.getFirstValue(this.files)
-      );
+      this.shiftAction();
     } else {
-      Key.shift = true;
-      Object.values(this.keys).forEach((item: Key | SpecialKey) =>
-        item.getSecondValue()
-      );
+      this.shiftAction(true);
     }
     this.element.classList.toggle("active");
+  }
+
+  private shiftAction(prop: boolean = false): void {
+    Key.shift = prop;
+    Object.values(this.keys).forEach((item: Key) => {
+      if (prop) {
+        item.getSecondValue();
+        if (Key.capslock) {
+          const { element } = item;
+          if (element.textContent?.match(/^[a-zA-Zа-яА-Я]$/)) {
+            if (Key.capslock) {
+              element.textContent = element.textContent.toLowerCase();
+            } else {
+              element.textContent = element.textContent.toUpperCase();
+            }
+          }
+        }
+      } else {
+        item.getFirstValue(this.files);
+        if (Key.capslock) {
+          const { element } = item;
+          if (element.textContent?.match(/^[a-zA-Zа-яА-Я]$/)) {
+            if (Key.capslock) {
+              element.textContent = element.textContent.toUpperCase();
+            } else {
+              element.textContent = element.textContent.toLowerCase();
+            }
+          }
+        }
+      }
+    });
+  }
+
+  protected getListeners(): void {
+    this.element.addEventListener("click", this.shiftTouchAction.bind(this));
   }
 }

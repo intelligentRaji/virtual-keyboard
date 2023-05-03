@@ -1,24 +1,14 @@
-import { Key } from "../components/Key";
-import { KeyInterface } from "../interfaces/keyInterface";
+import { KeyArguemnts, Key } from "../components/Key";
 import type { KeysRecord } from "../main/Keyboard";
+
+interface CapsConstructor extends KeyArguemnts {
+  keys: KeysRecord;
+}
 
 export class CapsLock extends Key {
   private readonly keys: KeysRecord;
-  private readonly files: KeyInterface;
 
-  constructor({
-    files,
-    parent,
-    className,
-    textarea,
-    keys,
-  }: {
-    files: KeyInterface;
-    parent: HTMLElement;
-    className: string;
-    textarea: HTMLTextAreaElement;
-    keys: KeysRecord;
-  }) {
+  constructor({ files, parent, className, textarea, keys }: CapsConstructor) {
     super({
       files,
       parent,
@@ -26,18 +16,19 @@ export class CapsLock extends Key {
       textarea,
     });
     this.keys = keys;
-    this.files = files;
   }
 
   public action(): void {
     this.capslockAction();
-    this.addActive();
+    this.element.classList.toggle("active");
   }
 
+  public removeActive(): void {}
+
   private capslockAction(): void {
-    Object.entries(this.keys).forEach((item: [string, Key | SpecialKey]) => {
+    Object.entries(this.keys).forEach((item: [string, Key]) => {
       if (item[1].element.textContent?.match(/^[a-zA-Zа-яА-Я]$/)) {
-        const key: Key | SpecialKey = item[1];
+        const key: Key = item[1];
         if (key.element.textContent) {
           if (Key.capslock === false) {
             key.element.textContent = key.element.textContent.toUpperCase();

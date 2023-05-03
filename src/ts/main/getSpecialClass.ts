@@ -1,4 +1,3 @@
-import { KeysRecord } from "./Keyboard";
 import { KeyInterface } from "../interfaces/keyInterface";
 import { Alt } from "../keys/Alt";
 import { Backspace } from "../keys/Backsace";
@@ -14,19 +13,22 @@ import { Key } from "../components/Key";
 export interface ObjofClassProperties {
   files: KeyInterface;
   parent: HTMLElement;
-  keys: KeysRecord;
+  keys: Record<string, Key>;
   textarea: HTMLTextAreaElement;
   className: string;
 }
 
-export const objOfSpecialClasses: {
-  Alt: (obj: ObjofClassProperties): Key => new Alt(obj),
+type Recordobj = Record<string, (obj: ObjofClassProperties) => Key>;
+
+export const objOfSpecialClasses: Recordobj = {
+  AltLeft: (obj: ObjofClassProperties): Key => new Alt(obj),
   Backspace: (obj: ObjofClassProperties): Key => new Backspace(obj),
   CapsLock: (obj: ObjofClassProperties): Key => new CapsLock(obj),
   Delete: (obj: ObjofClassProperties): Key => new Delete(obj),
   Enter: (obj: ObjofClassProperties): Key => new Enter(obj),
-  Left: (obj: ObjofClassProperties): Key => new Left(obj),
-  Right: (obj: ObjofClassProperties): Key => new Right(obj),
-  Shift: (obj: ObjofClassProperties): Key => new Shift(obj),
+  ArrowLeft: (obj: ObjofClassProperties): Key => new Left(obj),
+  ArrowRight: (obj: ObjofClassProperties): Key => new Right(obj),
+  ShiftRight: (obj: ObjofClassProperties): Key => new Shift(obj),
+  ShiftLeft: (obj: ObjofClassProperties): Key => new Shift(obj),
   Tab: (obj: ObjofClassProperties): Key => new Tab(obj),
 };
