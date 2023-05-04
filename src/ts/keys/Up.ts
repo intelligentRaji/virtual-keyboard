@@ -11,6 +11,6 @@ export class Up extends Key {
   }
 
   public action(): void {
-    super.action("▲");
+    window.getSelection()?.modify("move", "backward", "line");
   }
 }

@@ -11,6 +11,6 @@ export class Down extends Key {
   }
 
   public action(): void {
-    super.action("▼");
+    window.getSelection()?.modify("move", "forward", "line");
   }
 }
